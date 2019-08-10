@@ -15,7 +15,7 @@ const passportLocalMOngoose = require("passport-local-mongoose");
 
 const passport = require("passport");
 
-mongoose.connect("mongodb://localhost:27017/userDB", {
+mongoose.connect("mongodb+srv://admin-ashish:test123@cluster0-sufhd.mongodb.net/userDB", {
   useNewUrlParser: true
 });
 
@@ -101,7 +101,6 @@ passport.use(new GoogleStrategy({
 
 app.get("/", function(req, res) {
   res.render("home");
-  console.log(md5("ashish"));
 });
 
 app.get("/login", function(req, res) {
