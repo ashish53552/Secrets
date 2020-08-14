@@ -79,9 +79,6 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-//userSchema.plugin(encrypt,{secret:process.env.SECRET,encryptedFields:['password']});
-
-//var GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
@@ -192,6 +189,6 @@ app.get("/logout", function(req, res) {
   res.redirect("/");
 });
 
-app.listen(process.env.port || 3000, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log("Server Started With port 3000");
 });
